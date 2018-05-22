@@ -1,5 +1,5 @@
 package betanalysis;
-//gitteszt
+//featurteszt
 public class Adat {
     
 }
