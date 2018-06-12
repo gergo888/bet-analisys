@@ -11,8 +11,8 @@ import javafx.print.Collation;
 public class BajnoksagHiba implements Comparable{
     String strNev;
     String strEvad;
-    HashSet<Csapat> hCsapatok = new HashSet();
-    HashMap<Csapat, ArrayList> csapatPontok = new HashMap();
+    HashSet<Team> hCsapatok = new HashSet();
+    HashMap<Team, ArrayList> csapatPontok = new HashMap();
     Date dKezdo = new Date();
     
     public BajnoksagHiba(String strNev, String strEvad){
@@ -28,7 +28,7 @@ public class BajnoksagHiba implements Comparable{
         return strEvad;
     }
     
-    public void addCsapat(Csapat nev){
+    public void addCsapat(Team nev){
         hCsapatok.add(nev);
     }    
     
@@ -40,7 +40,7 @@ public class BajnoksagHiba implements Comparable{
         return dKezdo;
     }
     
-    public int pontSzamitas(String HV, Meccs meccs){
+    public int pontSzamitas(String HV, Match meccs){
         int pont = 0;
         String eredmeny;
         
@@ -60,7 +60,7 @@ public class BajnoksagHiba implements Comparable{
         return pont;
     }
     
-    public void addMeccs(Meccs meccs){
+    public void addMeccs(Match meccs){
         int hazaiPont = pontSzamitas("H", meccs);
         int vendegPont = pontSzamitas("V", meccs);
         
@@ -70,19 +70,19 @@ public class BajnoksagHiba implements Comparable{
         //HAZAI
         
         arrPontHazai.add(5);
-        csapatPontok.put(new Csapat("FTC"), arrPontHazai);
+        csapatPontok.put(new Team("FTC"), arrPontHazai);
         
         //VENDÉG
-        Csapat vendeg = meccs.getVendeg();
-        if (csapatPontok.containsKey(new Csapat(vendeg.getNev()))){
+        Team vendeg = meccs.getVendeg();
+        if (csapatPontok.containsKey(new Team(vendeg.getName()))){
             System.out.println("rfrewfrewf");
-            arrPontVendeg = csapatPontok.get(new Csapat(vendeg.getNev()));
+            arrPontVendeg = csapatPontok.get(new Team(vendeg.getName()));
         }
         arrPontVendeg.add(6);
-        csapatPontok.put(new Csapat(vendeg.getNev()), arrPontVendeg);        
+        csapatPontok.put(new Team(vendeg.getName()), arrPontVendeg);        
     }
     
-    public HashSet<Csapat> getCsapatok(){
+    public HashSet<Team> getCsapatok(){
         return hCsapatok;
     }
     
