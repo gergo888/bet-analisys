@@ -12,14 +12,14 @@ import java.util.HashMap;
  *
  * @author gergo
  */
-public class teszt {    
+public class test {    
     public static void main(String[] args) {
-        Csapat cs1 = new Csapat("FTC");
-        Csapat cs2 = new Csapat("MTK");
-        ArrayList<Csapat> arrCsapat = new ArrayList<>();
+        Team cs1 = new Team("FTC");
+        Team cs2 = new Team("MTK");
+        ArrayList<Team> arrCsapat = new ArrayList<>();
         arrCsapat.add(cs1);
         arrCsapat.add(cs2);
-        System.out.println(arrCsapat.contains(new Csapat("FTC")));
+        System.out.println(arrCsapat.contains(new Team("FTC")));
         System.out.println(cs1.equals(cs2));
     }
 }
