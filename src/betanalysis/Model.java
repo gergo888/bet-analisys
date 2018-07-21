@@ -228,14 +228,16 @@ public class Model {
         //Odds
         //EV
         //Team
+        return null;
     }
     
     public double EVcalc(){
+        return 0d;
         
     }
     
     public float WinCalc(){
-        
+        return 0f;
     }
         
     
@@ -246,10 +248,10 @@ public class Model {
         
     //OBJEKTUMOK BETÖLTÉSE FILEBÓL
     public ArrayList<File> objFileList(){
-        
+        return null;
     }
     
     public Object objLoading(){
-        
+        return null;
     }        
 }
