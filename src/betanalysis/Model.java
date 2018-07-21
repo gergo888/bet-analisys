@@ -228,10 +228,11 @@ public class Model {
         //Odds
         //EV
         //Team
+        return new ArrayList<>();
     }
     
     public double EVcalc(){
-        
+        1;
     }
     
     public float WinCalc(){
